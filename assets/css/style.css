@@ -5,7 +5,7 @@ body {
 
 header {
     border-bottom: 2px solid #ccc;
-    height: 86px;
+    /* height: 86px; */
     background-color: #fff;
 }
 
@@ -28,6 +28,14 @@ nav {
     text-align: right;
 }
 
+/* responsive to xs size: adjust top/bottom padding for navbar, which is now below name */
+@media only screen and (max-width: 575px) {
+    nav {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+}
+
 a {
     color: #aaa;
     text-decoration: none;
@@ -44,13 +52,27 @@ a {
 
 main {
     position: relative;
-    height: 800px;
+    padding-bottom: 70px;
     background-image: url("../images/large_leather.png");
+}
+
+/* when screen too narrow: reset padding-bottom of <main> for nicer layout */
+@media only screen and (max-width: 375px) {
+    main {
+        padding-bottom: 30px;
+    }
 }
 
 main > div.row {
     position: relative;
     top: 35px;
+}
+
+/* when screen too narrow: reset vertical pos of main column for nicer layout */
+@media only screen and (max-width: 375px) {
+    main > div.row {
+        top: 15px;
+    }
 }
 
 #column-main {
@@ -59,6 +81,24 @@ main > div.row {
     border: 1px solid #ddd;
     padding: 30px 40px 15px 40px;
 
+}
+
+/* responsive to xs size: margins to show background to the sides */
+@media only screen and (max-width: 575px) {
+    #column-main {
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+}
+
+/* reset margins/padding when width too small to contain column */
+@media only screen and (max-width: 375px) {
+    #column-main {
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
 }
 
 #pgTitle {
@@ -77,6 +117,13 @@ main > div.row {
     margin: 10px 35px 15px 0;
 }
 
+/* responsive to xs size: remove #mypic float */
+@media only screen and (max-width: 575px) {
+    #mypic {
+        float: none;
+    }
+}
+
 p {
     font-size: 18px;
     line-height: 2;
@@ -84,10 +131,10 @@ p {
 
 footer {
     border-top: 8px solid #4aaaa5;
-    height: 25px;
     background-color: #666;
     color: #ccc;
-    padding-top: 40px;
+    padding-top: 30px;
+    padding-bottom: 5px;
     text-align: center;
     font-size: 12px;
 }
