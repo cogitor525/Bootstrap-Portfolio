@@ -5,37 +5,41 @@
     <meta charset="UTF-8">
     <title>Marcus - About Me</title>
 
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!-- link to Bootstrap stylesheet -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
-<body class='container'>
-    <header>
-        <!-- .column-header to set width and center -->
-        <div class='column-header'>
+<body class='container-fluid'>
+    <header class='row'>
+        <!-- starting off with lg columns for desktop viewing -->
+        <div class='offset-lg-2 col-lg-2'>
             <!-- #myName for top-left header -->
             <h1 id='myName'>Marcus Yu</h1>
-
-            <!-- <nav> will be in-line with header, top-right -->
-            <nav>
-                <!-- #navlink(n) for site navigation links -->
-                <a id='navlink1' href="index.html">About</a>
-    
-                <a id='navlink2' href="portfolio.html">Portfolio</a>
-    
-                <a id='navlink3' href="contact.html">Contact</a>
-            </nav>
         </div>
+
+        <!-- <nav> will be in-line w/ #myName -->
+        <nav class='offset-lg-2 col-lg-4'>
+            <!-- #navlink(n) for site navigation links -->
+            <a id='navlink1' href="index.html">About</a>
+
+            <a id='navlink2' href="portfolio.html">Portfolio</a>
+
+            <a id='navlink3' href="contact.html">Contact</a>
+        </nav>
     </header>
 
     <main>
-        <!-- .column-main for main body column -->
-        <div class='column-main'>
-            <!-- #pgTitle for main content title -->
-            <h2 id='pgTitle'>About Me</h2>
+        <div class='row'>
+            <!-- #column-main for main body column -->
+            <div id='column-main' class='offset-lg-2 col-lg-8'>
+                <!-- #pgTitle for main content title -->
+                <h2 id='pgTitle'>About Me</h2>
 
-            <div>
                 <!-- #mypic for About Me pic -->
                 <img id='mypic' src="assets/images/Jouni&Akrout.png" alt="My Pic">
+
                 <p>
                     Hi, I'm Marcus. Currently I am learning web development in a bootcamp through UT Austin.
                     My brother Jeff and I started using computers back during the MS-DOS days;
@@ -52,7 +56,7 @@
                     (And of course, they would be the two pictured above :)
                 </p>
             </div>
-        </div>
+        <div>
     </main>
 
     <footer>
